@@ -293,7 +293,7 @@
     </script>
 </head>
 
-<body> 
+<body>
     <!-- Title Page -->
     <!-- Dark Theme Example: Change the background colour dark and change the following div "blog-title" into "blog-title white". -->
     <div class="container blog" id="first-content" style="background-color: #E0E4E6;">
@@ -331,7 +331,7 @@
             <div class="blog-cover">
                 <!-- <img class="foreground" src="assets/figures/teaser.svg", style="width: 375px; height: auto;">
                 <img class="background" src="assets/figures/teaser.svg", style="width: 400px; height: auto;">  -->
-                <img class="foreground" src="assets/figures/teaser_small.svg", style="width: 350px;">
+                <img class="foreground" src="assets/figures/teaser_small.svg" , style="width: 350px;">
                 <!-- <img class="background" src="assets/figures/teaser.svg"> -->
             </div>
         </div>
@@ -341,21 +341,23 @@
     <!-- Image Display -->
 
     <div class="container blog main">
-        <h1 class="text", style="text-align: center;">
+        <h1 class="text" , style="text-align: center;">
             Motivation
         </h1>
-        
-        <p class="text", style="text-align: justify;">
-            Our method allows for continuous and precise orientation control for generating the objects using text prompts in text-to-image diffusion models.
-            Further, it enables disentangled object-centric control in multi-object scenes, where you can control pose of individual objects.
+
+        <p class="text" , style="text-align: justify;">
+            Our method allows for continuous and precise orientation control for generating the objects using text
+            prompts in text-to-image diffusion models.
+            Further, it enables disentangled object-centric control in multi-object scenes, where you can control pose
+            of individual objects.
         </p>
-    </div> 
+    </div>
 
     <div class="container blog extra-large gray-linear">
-        <h2 class="text", style="text-align: center;">
+        <h2 class="text" , style="text-align: center;">
             Take Control!
-        </h2    >
-        <p class="text", style="text-align: center;">
+        </h2>
+        <p class="text" , style="text-align: center;">
             Adjust the sliders to control the orientation of the objects in the scene! <br><br>
         </p>
         <div class="columns-2">
@@ -373,7 +375,80 @@
                      "label": "bicycle", 
                      "imageGroup": "bicycle"
                  }'>
+                </div>
+            </div>
+
+            <div>
+                <img data-image-group="jeep" src="clarity/images/jeep/001.jpg" alt="jeep"
+                    style="max-width: 300px; margin-bottom: 20px;">
+
+
+                <!-- Accessory Slider -->
+                <div class="dynamic-slider" data-slider-config='{
+                     "prefix": "accessory", 
+                     "min": 1, 
+                     "max": 8, 
+                     "default": 1, 
+                     "label": "jeep", 
+                     "imageGroup": "jeep"
+                 }'>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Approach discussion and the approach figure -->
+    <div class="container blog main">
+        <h2 class="text" , style="text-align: center;">
+            Approach
+        </h2>
+
+        <p class="text" , style="text-align: justify;">
+            We propose a set of special compass tokens, that can be added with the text prompt to
+            control the precise orientation of the generated object. This framework allows for generating
+            realistic scenes with text prompts and preserves the generation capability of the underlieng
+            text-to-image diffusion models.
+        </p>
+    </div>
+
+    <div class="container blog main gray">
+        <img src="assets/figures/method.svg" , style="max-width: 400px; margin-bottom: 20px;">
+    </div>
+
+
+    <!-- Additional static results with multiple objects from the main paper -->
+    <div class="container blog main">
+        <h2 class="text" , style="text-align: center;">
+            Interactive Results
+        </h2>
+
+
+        <p class="text" , style="text-align: justify;">
+            Some interactive results where you can control the object orienations with the help of sliders.
+            Note that the proposed method allows for disentangled control of objects while preserving the orientation of
+            other objects.
+        </p>
+
+
+        <div class="columns-2">
+            <div>
+                <img data-image-group="sedan__sedan__sedan__sedan"
+                    src="clarity/images/sedan__sedan__sedan__sedan/001.jpg" alt="sedan__suv"
+                    style="max-width: 300px; margin-bottom: 20px;">
+
+                <!-- Sliders Wrapper -->
+                <div class="sliders-wrapper">
+                    <div class="dynamic-slider" data-slider-config='{
+                     "prefix": "slider", 
+                     "min": 1, 
+                     "max": 6, 
+                     "default": 1, 
+                     "label": "suv", 
+                     "imageGroup": "sedan__sedan__sedan__sedan"
+                 }'>
                     </div>
+                </div>
             </div>
 
             <div>
@@ -408,71 +483,40 @@
         </div>
     </div>
 
-
-    <!-- Approach discussion and the approach figure -->
-    <div class="container blog main">
-        <h2 class="text", style="text-align: center;">
-            Approach
-        </h2>
-        
-        <p class="text", style="text-align: justify;">
-            We propose a set of special compass tokens, that can be added with the text prompt to 
-            control the precise orientation of the generated object. This framework allows for generating
-            realistic scenes with text prompts and preserves the generation capability of the underlieng
-            text-to-image diffusion models.  
-        </p>
-    </div> 
-
-    <div class="container blog main gray">
-        <img src="assets/figures/method.svg", style="max-width: 400px; margin-bottom: 20px;">
-    </div>
-
+    <!-- <div class="container blog main gray">
+        <img src="clarity/images/bicycle/001.jpg" , style="max-width: 400px; margin-bottom: 20px;">
+    </div> -->
 
     <!-- Additional static results with multiple objects from the main paper -->
     <div class="container blog main">
-        <h2 class="text", style="text-align: center;">
-            Interactive results
-        </h2>
-        
-        <p class="text", style="text-align: justify;">
-            Some interactive results where you can control the object orienations with the help of sliders.
-            Note that the proposed method allows for disentangled control of objects while preserving the orientation of other objects.
-        </p>
-    </div> 
-
-    <div class="container blog main gray">
-        <img src="clarity/images/bicycle/001.jpg", style="max-width: 400px; margin-bottom: 20px;">
-    </div>
-
-    <!-- Additional static results with multiple objects from the main paper -->
-    <div class="container blog main">
-        <h2 class="text", style="text-align: center;">
+        <h2 class="text" , style="text-align: center;">
             Main results
         </h2>
-    </div> 
+    </div>
 
     <div class="container blog extra-large main gray">
-        <img src="assets/figures/main-results-still.svg",> 
-         <!-- style="max-width: 1200px; margin-bottom: 20px;"> -->
+        <img src="assets/figures/main-results-still.svg" ,>
+        <!-- style="max-width: 1200px; margin-bottom: 20px;"> -->
     </div>
 
     <!-- Additional static results with multiple objects from the main paper -->
     <div class="container blog main">
-        <h2 class="text", style="text-align: center;">
+        <h2 class="text" , style="text-align: center;">
             Personalization
         </h2>
 
-        <p class="text", style="text-align: justify;">
-            Given a few (~10) input images of an object, we can personalize the text-to-image model and generate the given subject with precise pose control in diverse contexts.
+        <p class="text" , style="text-align: justify;">
+            Given a few (~10) input images of an object, we can personalize the text-to-image model and generate the
+            given subject with precise pose control in diverse contexts.
         </p>
-    </div> 
+    </div>
 
     <div class="container blog extra-large main gray">
-        <img src="assets/figures/personlize-still.svg",> 
-            <!-- style="max-width: 1200px; margin-bottom: 20px;"> -->
+        <img src="assets/figures/personlize-still.svg" ,>
+        <!-- style="max-width: 1200px; margin-bottom: 20px;"> -->
     </div>
-    
-    
+
+
 
 
 
