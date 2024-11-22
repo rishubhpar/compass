@@ -405,10 +405,12 @@
         </h2>
 
         <p class="text" , style="text-align: justify;">
-            We propose a set of special compass tokens, that can be added with the text prompt to
-            control the precise orientation of the generated object. This framework allows for generating
-            realistic scenes with text prompts and preserves the generation capability of the underlieng
-            text-to-image diffusion models.
+        We encode the object orientation as an additional attribute in the text embedding space of the T2I model. 
+        Specifically, we introduce a special token, dubbed as <b> compass</b> token <b>c</b> along with each token in the prompt 
+        (e.g.,`A photo of <b>c1</b> SUV and <b>c2</b> sedan on a road.'). Each <b> compass</b> token is predicted by a lightweight encoder model taking the prescribed 
+        orientation angle as input. This formulation preserves the original interface of the base T2I model and enables 
+        precise object-centric orientation control in multi-object scenes. We train the encoder model and fine-tune the denoising U-Net with LoRA 
+        on a synthetic dataset of scenes containing one or two 3D assets placed in diverse layouts on an empty floor. 
         </p>
     </div>
 
